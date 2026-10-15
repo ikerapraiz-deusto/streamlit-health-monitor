@@ -3,7 +3,11 @@
     {"name": "API HIS (historia clínica)", "type": "http", "target": "https://example.com", "critical": true},
     {"name": "Servidor PACS (imagen)", "type": "tcp", "target": "example.com:443", "critical": true},
     {"name": "Pasarela HL7", "type": "tcp", "target": "example.com:80", "critical": false},
-    {"name": "Disco servidor BD", "type": "disk", "target": "/", "warn": 80, "fail": 90},
-    {"name": "CPU/Memoria simulada: Monitor UCI", "type": "simulated_vitals", "target": "UCI-01"}
+    {"name": "Disco servidor BD", "type": "disk", "target": "/", "warn": 80, "fail": 90}
+  ],
+  "patients": [
+    {"id": "P-001", "name": "Paciente 1", "bed": "UCI-01"},
+    {"id": "P-002", "name": "Paciente 2", "bed": "UCI-02"},
+    {"id": "P-003", "name": "Paciente 3", "bed": "Planta-12"}
   ]
 }

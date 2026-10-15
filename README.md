@@ -4,29 +4,20 @@ App de monitorización sanitaria tipo SimplMonitor construida con Streamlit.
 
 ## Características
 
-- Monitores de servicios HTTP
-- Monitores de puertos TCP
-- Monitor de uso de disco
-- Simulación de constantes de paciente (FC/SpO2)
-- Dashboard en tiempo real con auto-refresco
-- Historial y alertas de servicios críticos
+- **Pacientes**: ritmo cardiaco (lpm), tensión arterial sistólica/diastólica (mmHg) y saturación de oxígeno (SpO2 %), con semáforo por constante, alertas y gráficas de tendencia
+- **Sistemas**: monitores HTTP, puertos TCP y uso de disco
+- Auto-refresco configurable e historial de alertas
 
-## Requisitos
+> Las constantes vitales son **simuladas**. Sustituye `next_reading` en `vitals.py` por una integración real (HL7/FHIR/API del monitor).
 
-- Python 3.10+
-
-## Instalación
+## Instalación y ejecución
 
 ```bash
 pip install -r requirements.txt
-```
-
-## Ejecución
-
-```bash
-streamlit run app.py
+python -m streamlit run app.py
 ```
 
 ## Configuración
 
-Edita `config.json` para añadir o cambiar monitores.
+- `config.json`: lista de monitores de sistemas y de pacientes.
+- `vitals.py`: rangos de aviso/fallo de cada constante (`LIMITS`).
